@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MicroTools</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Small tool to remove extra spaces, change case, remove punctuation, count words/characters, copy and download text." />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="brand">
+        <h1>MicroTools - Text Formatter</h1>
+      </div>
+      <nav class="header-actions">
+        <button id="downloadBtn" class="btn outline">Download .txt</button>
+        <button id="copyBtn" class="btn primary">Copy</button>
+      </nav>
+    </header>
+
+    <section class="container">
+      <div class="left">
+        <label for="mainText" class="label">Input text</label>
+        <textarea id="mainText" placeholder="Paste or type your text here..." spellcheck="true"></textarea>
+
+        <div class="controls">
+          <div class="group">
+            <label class="label">Whitespace</label>
+            <button class="btn small" data-action="trim">Trim</button>
+            <button class="btn small" data-action="remove-extra-spaces">Remove extra spaces</button>
+            <button class="btn small" data-action="compact-newlines">Collapse multiple newlines</button>
+          </div>
+
+          <div class="group">
+            <label class="label">Case</label>
+            <button class="btn small" data-action="uppercase">UPPERCASE</button>
+            <button class="btn small" data-action="lowercase">lowercase</button>
+            <button class="btn small" data-action="titlecase">Title Case</button>
+            <button class="btn small" data-action="sentencecase">Sentence case</button>
+            <button class="btn small" data-action="snakecase">snake_case</button>
+            <button class="btn small" data-action="kebabcase">kebab-case</button>
+            <button class="btn small" data-action="capitalize">Capitalize Each Word</button>
+          </div>
+
+          <div class="group">
+            <label class="label">Clean</label>
+            <button class="btn small danger" data-action="remove-punctuation">Remove punctuation</button>
+            <button class="btn small" data-action="strip-non-ascii">Strip non-ASCII</button>
+            <button class="btn small" data-action="remove-empty-lines">Remove empty lines</button>
+          </div>
+
+          <div class="group flex-end">
+            <button id="undoBtn" class="btn small" disabled>Undo</button>
+            <button id="clearBtn" class="btn small outline">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="panel">
+          <label class="label">Preview</label>
+          <div id="preview" class="preview" aria-live="polite"></div>
+        </div>
+
+        <div class="panel stats">
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat-num" id="charCount">0</div>
+              <div class="stat-label">Characters</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" id="wordCount">0</div>
+              <div class="stat-label">Words</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" id="lineCount">0</div>
+              <div class="stat-label">Lines</div>
+            </div>
+          </div>
+          <div class="panel-actions">
+            <label class="label">Options</label>
+            <div class="option-row">
+              <input type="checkbox" id="autoPreview" checked />
+              <label for="autoPreview">Auto preview on change</label>
+            </div>
+            <div class="option-row">
+              <input type="checkbox" id="preserveLeading" />
+              <label for="preserveLeading">Preserve leading/trailing spaces in preview</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel help">
+          <label class="label">Quick Tips</label>
+          <ul>
+            <li>Use <strong>Remove extra spaces</strong> to collapse repeated spaces and tabs.</li>
+            <li><strong>Title Case</strong> converts to Title Case but keeps small words lower if you like (simple heuristic used).</li>
+            <li>Click <strong>Download .txt</strong> to save the current text as a file.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="app-footer">
+    <div class="footer-content">
+        <small>
+        Format smarter, not harder ♥ — 
+        <a href="https://itsmohitnamdeo.github.io/" target="_blank" class="footer-portfolio">
+            Mohit Namdeo
+        </a>
+        <a href="https://www.linkedin.com/in/mohit-namdeo/" target="_blank" class="footer-icon-inline">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/itsmohitnamdeo" target="_blank" class="footer-icon-inline">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
+        </a>
+        </small>
+    </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
