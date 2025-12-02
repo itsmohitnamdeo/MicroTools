@@ -1,10 +1,6 @@
 
 # MicroTools — Text Formatter
 
-A Web App to transform text quickly.  
-
-# MicroTools — Text Formatter
-
 A professional single-page web app to clean and transform text quickly.  
 Perfect for removing extra spaces, changing case, cleaning text, and more.
 
@@ -37,7 +33,9 @@ Perfect for removing extra spaces, changing case, cleaning text, and more.
 
 ---
 
-## Screenshot
+## Image
+
+<img width="1351" height="627" alt="screenshot" src="https://github.com/user-attachments/assets/520710f4-2180-42b1-9241-b6c13fc75edb" />
 
 
 ## Contact
